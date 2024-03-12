@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Brain Bazaar - Your One-Stop Destination for PRECISE STUDY MATERIAL" />
+    <meta name="description" content="Brain Bazaar offers a powerful AI-driven Notes Summarizer tool. Easily condense lengthy notes into concise summaries. Explore our educational platform today!">
+    <meta property="og:image" content="https://www.brainbazaar.in/assets/images/webpre.jpg" />
+    <meta property="og:url" content="https://www.brainbazaar.in" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brain Bazaar - Your One-Stop Destination for PRECISE STUDY MATERIAL" />
+    <meta name="twitter:description"
+       content="Brain Bazaar offers a powerful AI-driven Notes Summarizer tool. Easily condense lengthy notes into concise summaries. Explore our educational platform today!"/>
+    <meta name="twitter:image" content="https://www.brainbazaar.in/assets/images/webpre.jpg" />
+    <meta name="twitter:url" content="https://www.brainbazaar.in" />
+    <meta property="linkedin:title" content="Brain Bazaar - Your One-Stop Destination for PRECISE STUDY MATERIAL" />
+    <meta property="linkedin:description"
+       content="Brain Bazaar offers a powerful AI-driven Notes Summarizer tool. Easily condense lengthy notes into concise summaries. Explore our educational platform today!"/>
+    <meta property="linkedin:image" content="https://www.brainbazaar.in/assets/images/webpre.jpg" />
+    <meta property="linkedin:url" content="https://www.brainbazaar.in" />
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+    <title>Brain Bazaar - AI Notes Summarizer</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            color: #15152b;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem; /* Adjust the size as needed */
+            font-weight: bold; /* Increase the boldness */
+        }
+
+        .header h2 {
+            font-size: 2rem; /* Adjust the size as needed */
+            font-weight: bold; /* Increase the boldness */
+        }
+
+        .input-container,
+        .output-container {
+            background-color: #fefefc;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        }
+
+        .textarea {
+            width: 100%;
+            height: 300px; /* Adjust the height as needed */
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .summarize-button {
+            background-color: #15152b;
+            color: #fefefc;
+        }
+
+        .summarize-button:hover {
+            background-color: #7daedc;
+        }
+
+        .clear-button {
+            background-color: #7daedc;
+            color: #fefefc;
+        }
+
+        .clear-button:hover {
+            background-color: #a25bac;
+        }
+
+        .output-container {
+    background-color: #fefefc;
+    border-radius: 20px;
+    height: 450px; /* Change height to auto */
+    max-height: 450px; /* Add max-height to limit height if needed */
+    overflow-y: auto; /* Add overflow-y to enable vertical scrolling if needed */
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    margin-left: 20px;
+}
+
+
+        .copy-button {
+            background-color: #7daedc;
+            color: #fefefc;
+        }
+
+        .copy-button:hover {
+            background-color: #a25bac;
+        }
+
+        .additional-text {
+            font-size: 0.8rem; /* Adjust the size as needed */
+            text-align: center;
+            margin-top: 10px;
+            color: #666; /* Adjust the color as needed */
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin: 0 auto;
+            margin-top: -35px;
+        }
+        @media screen and (max-width: 768px) {
+            .input-container{
+                height: 450px;
+                margin: 0 auto;
+            }
+            .output-container {
+                height: 450px;
+                margin: 0 auto;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex flex-wrap">
+            <div class="w-full">
+                <div class="header">
+                    <div class="text-center">
+                        <img src="../static/logo.png" class="logo" alt="Brain Bazaar Logo">
+                        <br>
+                    </div>
+                    <h1 class="text-4xl font-bold">Brain Bazaar</h1>
+                    <h2 class="text-3xl font-bold">AI Notes Summarizer</h2>
+                    <p class="additional-text">Add notes to be explained in short</p>
+                </div>
+                <div class="input-output-container flex flex-wrap">
+                    <div class="w-full md:w-1/2">
+                        <div class="input-container">
+                            <form action="{{url_for('Summarize')}}" method="post">
+                                <textarea class="textarea" name="data" id="data" placeholder="Enter your text" required="required"></textarea>
+                                <div class="summary-length-container">
+                                    <h3 class="summary-length-title">Summary Length</h3>
+                                    <input type="range" class="range-input" min="20" max="1000" name="maxL">
+                                </div>                        
+                                <div class="button-container">
+                                    <button class="button summarize-button" type="submit" onclick="Check()">Summarize</button>
+                                    <button class="button clear-button" type="reset">Clear</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2">
+                        <div class="output-container">
+                            <textarea class="textarea" id="myInput" name="result" readonly placeholder="Your Summary" style="height: 300px;">{{ result }}</textarea>
+                            <button class="button copy-button" onclick="myFunction()">Copy text</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p>This is an beta version of the Notes Summarizer.</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+        }
+
+        function Check() {
+            var reg = /<(.|\n)*>/g;
+            if (reg.test(document.getElementById("data").value)) {
+                var ErrorText = 'Make Sure You Provide Valid Data.';
+                alert('Error Text');
+            }
+        }
+    </script>
+</body>
+
+</html>
