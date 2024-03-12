@@ -1,4 +1,4 @@
-Flask
+flask
 requests
 appnope==0.1.2
 argon2-cffi==21.3.0
